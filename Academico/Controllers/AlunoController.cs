@@ -1,6 +1,6 @@
-using Microsoft.AspNetCore.Mvc.ViewFeatures.Buffers;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Academico.Controller
+namespace Academico.Controllers;
 
 public class AlunoController : Controller
 {
