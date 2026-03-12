@@ -1,12 +1,7 @@
-using Microsoft.AspNetCore.SignalR;
-using Microsoft.Net.Http.Headers;
+namespace Academico.Models;
 
-namespace Academico.models;
-
-public class Aluno
+public class Aluno : Pessoa 
 {
-    public string nome {get; set;}
-    public string matricula {get; set;}
-    public string cpf {get; set;}
-    public DateOnly dataNascimento {get; set;}
+    public string Matricula {get; set; }
+    public string Curso {get; set; }
 }

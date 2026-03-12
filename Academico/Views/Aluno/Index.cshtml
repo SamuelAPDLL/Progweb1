@@ -1,0 +1,22 @@
+@Model List<Academico.Models.Aluno>;
+@{
+    ViewData[index: "Title"] = "Perfil Aluno";
+}
+
+@foreach(Aluno item in Model)
+{
+
+<img src="img/Samuel.png" width="150" />
+
+<p><strong>Nome:</strong> @item.Nome</p>
+<p><strong>Data de Nascimento:</strong> @item.DataNascimento</p>
+<p><strong>Curso:</strong> @item.Curso</p>
+<p><strong>Matrícula:</strong> @item.Matricula</p>
+}
+<h1>------------------------------------------------------------</h1>
+
+<h2>Disciplinas Cursadas:</h2>
+<p>* Prog WEBI;</p>
+<p>* Fundamentos Banco de Dados;</p>
+<p>* CalculoI;</p>
+}
