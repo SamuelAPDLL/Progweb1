@@ -1,0 +1,35 @@
+@using Microsoft.AspNetCore.Http.Features
+@model List<Academico.Models.Professor>
+@{
+    ViewData["Title"] = "Perfil Professor";
+}
+
+<div class="">
+    <a class="btn btn-primary" asp-controller="Professor" asp-action="CriarProfessor" >Cadastrar Professor</a>
+    <a class="btn btn-secondary" asp-controller="Professor" asp-action="AtualizarProfessor" >Atualizar Professor</a>
+</div>
+
+@foreach (Professor item in Model)
+{
+    <div class="card mb-3 w-100 mt-5">
+        <nav style="display: flex; align-items: center; gap: 20px; padding: 15px;">
+            <img src="/images/Samuel.png" class="foto" alt="Avatar">
+            <div>
+                <p class="card-text">Nome: @item.Nome</p>
+                <p class="card-text">Data Nascimento: @item.DataNascimento.Day/@item.DataNascimento.Month/@item.DataNascimento.Year</p>
+                <p class="card-text">Area: @item.Area</p>
+                <p class="card-text">Siape: @item.Siape</p>
+            </div>
+
+        </nav>
+
+        <div class="p3">
+            <a class="btn btn-danger" asp-action="ExcluirProfessor"
+                asp-controller="Professor"
+                asp-route-id="@item.Id">
+                Excluir
+            </a>
+        </div>
+
+    </div>
+}

@@ -1,0 +1,88 @@
+@model List<Academico.Models.Disciplina>
+
+@{
+    ViewData["Title"] = "Disciplinas";
+}
+
+<div class="mb-4">
+    <a class="btn btn-primary"
+       asp-controller="Disciplina"
+       asp-action="CriarDisciplina">
+        Cadastrar Disciplina
+    </a>
+</div>
+
+@foreach (Disciplina item in Model)
+{
+    <div class="disciplina-card">
+
+        <div class="disciplina-topo">
+
+            <div>
+                <h3 class="titulo-disciplina">
+                    @item.Codigo - @item.Nome
+                </h3>
+
+                <p class="subtitulo-disciplina">
+                    Disciplina cadastrada no sistema acadêmico
+                </p>
+            </div>
+
+            <div class="disciplina-botoes">
+
+                <a class="btn btn-outline-light"
+                   asp-controller="Disciplina"
+                   asp-action="AtualizarDisciplina"
+                   asp-route-id="@item.Id">
+                    Atualizar
+                </a>
+
+                <a class="btn btn-danger"
+                   asp-controller="Disciplina"
+                   asp-action="ExcluirDisciplina"
+                   asp-route-id="@item.Id">
+                    Excluir
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="linha-divisoria"></div>
+
+        <div class="disciplina-info">
+
+            <div class="info-box">
+                <span class="info-titulo">
+                    Professor
+                </span>
+
+                <p class="info-valor">
+                    @item.Professor?.Nome
+                </p>
+            </div>
+
+            <div class="info-box">
+                <span class="info-titulo">
+                    Período
+                </span>
+
+                <p class="info-valor">
+                    @item.Periodo
+                </p>
+            </div>
+
+            <div class="info-box">
+                <span class="info-titulo">
+                    Carga Horária
+                </span>
+
+                <p class="info-valor">
+                    @item.CargaHoraria horas
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+}

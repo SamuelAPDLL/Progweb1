@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>Sistema Acadêmico</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+
+<body class="@ViewData["BodyClass"]">
+
+    <header>
+        <h1>Sistema Acadêmico</h1>
+
+        <nav class="Menu" style="display: flex; justify-content: space-between;">
+
+            <div class="Esquerda">
+                <a asp-controller="Home" asp-action="Index">Início</a>
+                <a asp-controller="Aluno" asp-action="Index">Alunos</a>
+                <a asp-controller="Professor" asp-action="Index">Professores</a>
+                <a asp-controller="Disciplina" asp-action="Index">Disciplinas</a>
+            </div>
+
+            <div class="Direita">
+                <a asp-controller="Autenticacao"
+                   asp-action="Login"
+                   class="btn btn-primary">
+                    Login
+                </a>
+
+                <a asp-controller="Autenticacao"
+                   asp-action="Logout"
+                   class="btn btn-danger">
+                    Logout
+                </a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        @if (TempData["Mensagem"] != null)
+        {
+            <div class="alert alert-@TempData["Tipo"]">
+                @TempData["Mensagem"]
+            </div>
+        }
+
+        @RenderBody()
+
+    </main>
+
+    <footer>
+        <p>© 2026 - Sistema Acadêmico</p>
+    </footer>
+
+</body>
+</html>

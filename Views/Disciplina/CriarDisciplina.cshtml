@@ -1,0 +1,50 @@
+@model Academico.Models.DisciplinaViewModel;
+
+<form method="post" asp-action="CriarDisciplina">
+
+    <div class="form-group">
+        <label>Nome</label>
+        <div class="form-group">
+    <label asp-for="Nome">Disciplina</label>
+
+    <select asp-for="Nome" class="form-control">
+        <option value="">Selecione a disciplina</option>
+        <option value="Agronomia">Agronomia</option>
+        <option value="Matemática">Matemática</option>
+        <option value="Computação">Computação</option>
+    </select>
+
+</div>
+    </div>
+
+    <div class="form-group">
+        <label>CargaHoraria</label>
+        <input asp-for="CargaHoraria" type="number" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Professor</label>
+        <select asp-for="ProfessorId" asp-items="@ViewBag.Professor" class="form-control" >
+            </select>
+    </div>
+
+    <div class="form-group">
+        <label>Periodo</label>
+
+        <select asp-for="Periodo" class="form-control">
+            <option value="1° Periodo">1° Período</option>
+            <option value="2° Periodo">2° Período</option>
+            <option value="3° periodo">3° período</option>
+            <option value="4° periodo">4° período</option>
+            <option value="5° periodo">5° período</option>
+            <option value="6° periodo">6° período</option>
+            <option value="7° periodo">7° período</option>
+            <option value="8° periodo">8° período</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        Cadastrar
+    </button>
+
+</form>

@@ -1,0 +1,24 @@
+@model Academico.Models.CadastroUsuarioViewModel
+
+<h2>Cadastrar Usuário</h2>
+
+<form asp-action="Cadastrar" method="post">
+    <div>
+        <label>Nome</label>
+        <input asp-for="Nome" class="form-control" />
+    </div>
+
+    <div>
+        <label>Email</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+
+    <div>
+        <label>Senha</label>
+        <input asp-for="Senha" type="password" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">Cadastrar</button>
+</form>
+
+<a asp-action="Login">Já tenho conta</a>
